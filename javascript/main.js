@@ -11,10 +11,15 @@ const startGame = () => {
     canvas.style.display = "flex";
 
     // ejecutar mi juego
-    let newGame = new Game()
-    newGame.gameLoop()
+    let newGame = new Game();
+    newGame.gameLoop();
 };
 
+// const restartGame = () => {
+
+//     let newGame = new Game();
+//     newGame.gameLoop();
+// };
 
 
 
