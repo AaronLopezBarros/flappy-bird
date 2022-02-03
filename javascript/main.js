@@ -1,5 +1,6 @@
 // * GLOBAL VARIABLES
 let splashScreen = document.querySelector("#splash-screen");
+let gameOverScreen = document.querySelector("#gameover-screen");
 let canvas = document.querySelector("#my-canvas");
 let ctx = canvas.getContext("2d");
 let newGame;
@@ -13,19 +14,23 @@ const startGame = () => {
   // ejecutar mi juego
   newGame = new Game();
   newGame.gameLoop();
-
 };
 
-// const restartGame = () => {
+const restartGame = () => {
+  gameOverScreen.style.display = "none";
+  canvas.style.display = "flex";
 
-//     let newGame = new Game();
-//     newGame.gameLoop();
-// };
+  newGame = new Game();
+  newGame.gameLoop();
+};
 
 // * ADD EVENT LISTENERS
 let startButton = document.querySelector("#start-btn");
 startButton.addEventListener("click", startGame);
 
+let restartButton = document.querySelector("#restart-btn");
+restartButton.addEventListener("click", restartGame);
+
 document.addEventListener("keydown", (event) => {
-    if(event.key === " ") newGame.bird.birdJump()
-})
+  if (event.key === " ") newGame.bird.birdJump();
+});
